@@ -85,12 +85,12 @@ const rightObject = Bodies.polygon(600, 180, 5, 80, { isStatic: true });
 const leftObject = Bodies.polygon(170, 170, 7, 60, { isStatic: true });
 
 // 拘束されない円（手球）
-const Circle = Bodies.circle(200, 100, 30);
+const circle = Bodies.circle(200, 100, 30);
 
 // 拘束される物体（中央の板）
 const boundSquare = Bodies.rectangle(400, 450, 200, 30, {restitution: 2});
 
-Composite.add(engine.world, [rightObject, leftObject, Circle, boundSquare]);
+Composite.add(engine.world, [rightObject, leftObject, circle, boundSquare]);
 
 
 // 板と2本のバネ接続（板の両端と空間点の接続）
