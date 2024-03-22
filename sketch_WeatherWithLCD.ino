@@ -55,7 +55,6 @@ void sendCommand(void){
 
 boolean readResponse(void) {
   char endOfHeaders[] = "\r\n\r\n";
-
   if (client.available()) {
     memset(rspns, 0, sizeof(rspns)); // バッファをクリア
     client.readBytesUntil('\r', rspns, sizeof(rspns));
@@ -82,8 +81,7 @@ void analyzeJson(){
   }
   JsonObject weather = doc["weather"][0];
   wm = weather["main"];    //wmにClearなどの天気情報を格納
-  temperature = doc["main"]["temp"];  //変更点！気温情報を抜き出すコード
-
+  temperature = doc["main"]["temp"];  //気温情報を抜き出す
   return;
 }
 
@@ -100,7 +98,7 @@ void setup(void){
   initForDebug();
   (void)initHardware();
   if(!initEthernet()){
-    //Serial.println("Failed to configure Ethernet using DHCP");
+    Serial.println("Failed to use DHCP");
     return;
   }
 
