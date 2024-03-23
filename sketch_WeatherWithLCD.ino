@@ -8,7 +8,7 @@
 LiquidCrystal_I2C lcd(0x27, 16 , 2);
 
 char server[] = "api.openweathermap.org";
-byte mac[] = {0x20, 0x3C, 0xAE, 0x34, 0x2D, 0xCA};
+byte mac[] = {XXXX, XXXX, XXXX, XXXX, XXXX, XXXX};
 EthernetClient client;
 char rspns[500];
 boolean cnnctFlg = false;
